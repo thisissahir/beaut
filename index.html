@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en" id="html-root">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title id="title-tag">Body Sculpting &amp; Post-Op Recovery in North Austin | Beauty Zone Austin</title>
+<meta name="description" content="North Austin's advanced body sculpting and post-op recovery medspa. 23+ years, medical director supervised, se habla español. Book with Cinthia Padilla.">
+<link rel="canonical" href="https://www.beautyzoneaustin.com/">
+<meta property="og:title" content="Beauty Zone Austin — Body Sculpting &amp; Post-Op Recovery, North Austin">
+<meta property="og:description" content="23+ years, medical director supervised, bilingual care. Body sculpting, post-op recovery, laser, and facials with Cinthia Padilla.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Jost:wght@300;400;500;600&family=Alex+Brush&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#EDE4D6;
+  --surface:#FFFFFF;
+  --oat:#D9CFBE;
+  --ink:#1C1712;
+  --muted:#5B5347;
+  --line:#E1D5C1;
+  --gold:#C2A15A;
+  --gold-deep:#9C7E3E;
+  --serif:'Playfair Display',Georgia,serif;
+  --sans:'Jost',system-ui,-apple-system,Arial,sans-serif;
+  --script:'Alex Brush',cursive;
+  --max:1180px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--ink);background:var(--bg);line-height:1.65;font-weight:300;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.18;letter-spacing:.1px;color:var(--ink)}
+h1{font-size:clamp(34px,5.4vw,56px)}
+h2{font-size:clamp(26px,3.6vw,38px)}
+h3{font-size:21px}
+p{color:var(--muted);max-width:62ch}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+.eyebrow{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-deep);font-weight:600}
+.script{font-family:var(--script);font-size:1.5em;color:var(--gold);font-weight:400}
+.btn{display:inline-block;background:var(--gold);color:#fff;padding:15px 32px;border-radius:2px;font-weight:500;letter-spacing:.03em;font-size:15px;transition:filter .2s,transform .2s;border:1px solid var(--gold)}
+.btn:hover{filter:brightness(1.06);transform:translateY(-1px)}
+.btn-ghost{background:transparent;border:1px solid var(--ink);color:var(--ink)}
+.btn-ghost:hover{background:var(--ink);color:#fff}
+section{padding:88px 0}
+.section-oat{background:var(--oat)}
+.section-white{background:var(--surface)}
+
+/* Header */
+header{position:sticky;top:0;z-index:60;background:rgba(237,228,214,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;max-width:var(--max);margin:0 auto;gap:16px}
+.logo{display:flex;align-items:center;gap:8px;font-family:var(--serif);font-size:20px;letter-spacing:.3px;white-space:nowrap}
+.logo .mono{width:38px;height:38px;border-radius:50%;border:1.5px solid var(--gold);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:15px;color:var(--gold-deep);font-weight:700}
+.nav-links{display:flex;gap:26px;font-size:14px}
+.nav-links a{color:var(--ink)}
+.nav-links a:hover{color:var(--gold-deep)}
+.nav-cta{display:flex;gap:12px;align-items:center}
+.nav-phone{font-size:14px;color:var(--ink);font-weight:500}
+.lang-toggle{border:1px solid var(--ink);border-radius:20px;font-size:12px;font-weight:600;letter-spacing:.04em;padding:6px 4px;display:flex;cursor:pointer;background:transparent;overflow:hidden}
+.lang-toggle span{padding:4px 10px;border-radius:16px;transition:background .2s,color .2s}
+.lang-toggle span.active{background:var(--ink);color:#fff}
+@media(max-width:920px){.nav-links{display:none}.nav-phone{display:none}}
+
+/* Hero */
+.hero{padding:0}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;min-height:min(82vh,700px)}
+.hero-copy{display:flex;flex-direction:column;justify-content:center;padding:64px 24px 64px max(24px,calc((100vw - var(--max))/2 + 24px))}
+.hero-copy .script-line{display:block;margin-bottom:6px}
+.hero-copy h1{margin:10px 0 20px}
+.hero-copy .proof{font-size:16px;color:var(--gold-deep);margin-bottom:30px;font-weight:500}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+.hero-media{background:linear-gradient(160deg,var(--oat) 0%,var(--gold) 130%);position:relative;display:flex;align-items:center;justify-content:center}
+.hero-media .frame{position:absolute;inset:32px;border:1px solid rgba(255,255,255,.55);border-radius:6px}
+.hero-media .caption{position:absolute;bottom:26px;left:26px;right:26px;color:#fff;font-size:13px;letter-spacing:.04em;background:rgba(28,23,18,.35);padding:10px 14px;border-radius:3px;backdrop-filter:blur(2px)}
+@media(max-width:920px){.hero-grid{grid-template-columns:1fr}.hero-media{min-height:280px;order:-1}}
+
+/* Trust strip */
+.trust{background:var(--ink);color:#fff;padding:28px 0}
+.trust .row{display:flex;justify-content:center;gap:52px;flex-wrap:wrap;align-items:center;text-align:center}
+.trust .stat{font-size:13px;letter-spacing:.03em;color:rgba(255,255,255,.75)}
+.trust .stat b{font-family:var(--serif);font-size:23px;display:block;color:var(--gold);font-weight:600}
+
+/* Difference grid */
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:40px}
+@media(max-width:980px){.grid4{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.grid4{grid-template-columns:1fr}}
+.pillar{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:30px 24px}
+.pillar .num{font-family:var(--serif);color:var(--gold);font-size:28px;margin-bottom:10px}
+.pillar h3{margin-bottom:8px;font-size:18px}
+.pillar p{font-size:14px}
+
+/* Treatment cards */
+.tgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:40px}
+@media(max-width:980px){.tgrid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.tgrid{grid-template-columns:1fr}}
+.tcard{background:var(--surface);border:1px solid var(--line);border-radius:4px;overflow:hidden;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s}
+.tcard:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(28,23,18,.1)}
+.tcard .ph{height:130px;background:linear-gradient(135deg,var(--oat),var(--gold))}
+.tcard .body{padding:22px}
+.tcard h3{font-size:18px;margin-bottom:6px}
+.tcard p{font-size:13.5px;margin-bottom:10px}
+.tcard .price{font-size:13px;color:var(--gold-deep);font-weight:600;margin-bottom:14px;display:block}
+.tcard .links{display:flex;gap:14px;font-size:13px;font-weight:600}
+.tcard .links a{color:var(--ink);border-bottom:1px solid var(--gold)}
+
+/* Founder */
+.founder{display:grid;grid-template-columns:.85fr 1.15fr;gap:56px;align-items:center}
+@media(max-width:920px){.founder{grid-template-columns:1fr}}
+.founder-photo{aspect-ratio:4/5;border-radius:6px;background:linear-gradient(150deg,var(--oat),var(--gold) 140%);position:relative}
+.founder-photo .frame{position:absolute;inset:18px;border:1px solid rgba(255,255,255,.6);border-radius:4px}
+.founder-photo .cap{position:absolute;bottom:20px;left:20px;right:20px;color:#fff;font-size:12px;background:rgba(28,23,18,.4);padding:8px 12px;border-radius:3px}
+.founder-quote{font-family:var(--serif);font-style:italic;font-size:20px;line-height:1.5;margin:22px 0;color:var(--ink);border-left:3px solid var(--gold);padding-left:20px}
+.founder-quote .who{display:block;margin-top:12px;font-family:var(--sans);font-style:normal;font-size:13px;color:var(--gold-deep);font-weight:600}
+
+/* Menu accordion */
+.menu-cats{margin-top:40px;display:flex;flex-direction:column;gap:14px}
+.menu-cat{background:var(--surface);border:1px solid var(--line);border-radius:4px}
+.menu-cat summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;padding:22px 26px;font-family:var(--serif);font-size:19px;font-weight:600}
+.menu-cat summary::-webkit-details-marker{display:none}
+.menu-cat summary .plus{color:var(--gold);font-size:22px;font-family:var(--sans)}
+.menu-cat[open] summary .plus{transform:rotate(45deg)}
+.menu-cat .items{padding:0 26px 24px;display:grid;grid-template-columns:repeat(2,1fr);gap:10px 30px}
+@media(max-width:700px){.menu-cat .items{grid-template-columns:1fr}}
+.menu-item{display:flex;justify-content:space-between;gap:12px;font-size:14.5px;padding:8px 0;border-bottom:1px dashed var(--line)}
+.menu-item .nm{color:var(--ink)}
+.menu-item .pr{color:var(--gold-deep);font-weight:600;white-space:nowrap}
+.menu-note{margin-top:20px;font-size:13.5px}
+
+/* Process */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:44px}
+@media(max-width:820px){.steps{grid-template-columns:1fr}}
+.step{text-align:center;padding:0 12px}
+.step .circle{width:56px;height:56px;border-radius:50%;background:var(--ink);color:var(--gold);font-family:var(--serif);font-size:22px;display:flex;align-items:center;justify-content:center;margin:0 auto 18px}
+.step h3{margin-bottom:8px;font-size:18px}
+.step p{font-size:14px;margin:0 auto}
+
+/* Financing */
+.finance{background:linear-gradient(135deg,var(--ink),#2c241c);color:#fff;border-radius:6px;padding:52px 40px;text-align:center}
+.finance h2{color:#fff}
+.finance p{color:rgba(255,255,255,.78);margin:14px auto 26px}
+.finance .btn{background:var(--gold)}
+
+/* Community */
+.community{display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap}
+.community .badge{display:flex;align-items:center;gap:14px;background:var(--surface);border:1px solid var(--line);border-radius:60px;padding:12px 24px}
+.community .badge b{font-family:var(--serif);font-size:20px;color:var(--gold-deep)}
+
+/* FAQ */
+.faq details{border-bottom:1px solid var(--line);padding:20px 0}
+.faq summary{font-family:var(--serif);font-size:18px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--gold);font-family:var(--sans);font-size:20px}
+.faq details[open] summary::after{content:"–"}
+.faq p{margin-top:12px;font-size:14.5px}
+
+/* Location */
+.loc{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center}
+@media(max-width:820px){.loc{grid-template-columns:1fr}}
+.map{aspect-ratio:16/10;border-radius:6px;overflow:hidden;border:1px solid var(--line)}
+.map iframe{width:100%;height:100%;border:0;display:block}
+
+/* Final CTA */
+.finalcta{background:var(--ink);color:#fff;text-align:center;padding:80px 0}
+.finalcta h2{color:#fff}
+.finalcta p{color:rgba(255,255,255,.75);margin:14px auto 28px}
+.finalcta .script{font-size:1.7em}
+
+/* Footer */
+footer{background:#151009;color:rgba(255,255,255,.75);padding:56px 0 96px}
+footer a{color:rgba(255,255,255,.75)}
+footer a:hover{color:var(--gold)}
+.fcols{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:32px}
+@media(max-width:820px){.fcols{grid-template-columns:1fr 1fr}}
+.fcols h4{font-family:var(--sans);text-transform:uppercase;letter-spacing:.12em;font-size:12px;color:#fff;margin-bottom:14px}
+.fcols div p, .fcols div a{display:block;margin-bottom:8px;font-size:14px}
+.legal{margin-top:40px;padding-top:24px;border-top:1px solid rgba(255,255,255,.12);font-size:12px;color:rgba(255,255,255,.5);line-height:1.7}
+
+/* Sticky mobile book bar */
+.bookbar{position:fixed;bottom:0;left:0;right:0;z-index:70;display:none;background:var(--surface);border-top:1px solid var(--line);padding:10px 14px;gap:10px}
+.bookbar a{flex:1;text-align:center;padding:13px;border-radius:2px;font-weight:600;font-size:15px}
+.bookbar .call{border:1px solid var(--ink);color:var(--ink)}
+.bookbar .book{background:var(--gold);color:#fff}
+@media(max-width:920px){.bookbar{display:flex}body{padding-bottom:66px}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a class="logo" href="/"><span class="mono">BZ</span><span>Beauty <span class="script">Zone</span> Austin</span></a>
+    <nav class="nav-links">
+      <a href="#treatments" data-en="Treatments" data-es="Tratamientos">Treatments</a>
+      <a href="#founder" data-en="About Cinthia" data-es="Sobre Cinthia">About Cinthia</a>
+      <a href="#financing" data-en="Financing" data-es="Financiamiento">Financing</a>
+      <a href="#faq" data-en="FAQ" data-es="Preguntas">FAQ</a>
+      <a href="#location" data-en="Visit" data-es="Visítanos">Visit</a>
+    </nav>
+    <div class="nav-cta">
+      <button class="lang-toggle" id="langToggle" aria-label="Toggle language / Cambiar idioma">
+        <span class="active" data-lang="en">EN</span><span data-lang="es">ES</span>
+      </button>
+      <a class="nav-phone" href="tel:15125861010">(512) 586-1010</a>
+      <a class="btn" href="https://beautyzoneaustin.glossgenius.com/" target="_blank" rel="noopener" data-en="Book Now" data-es="Reserva ahora">Book Now</a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow" data-en="North Austin's advanced-aesthetics &amp; post-op medspa" data-es="El medspa de estética avanzada y post-operatorio del norte de Austin">North Austin's advanced-aesthetics &amp; post-op medspa</span>
+      <h1 data-en="Advanced body sculpting &amp; post-op recovery, 23 years in expert hands." data-es="Escultura corporal avanzada y recuperación post-operatoria, 23 años en manos expertas.">Advanced body sculpting &amp; post-op recovery, 23 years in expert hands.</h1>
+      <p class="proof" data-en="23+ years · Medical Director Supervised · Se habla español" data-es="Más de 23 años · Supervisado por Director Médico · Se habla español">23+ years · Medical Director Supervised · Se habla español</p>
+      <p data-en="Body sculpting, post-surgery recovery, laser, and facials with Cinthia Padilla — expert hands, safe care, financing available." data-es="Escultura corporal, recuperación post-cirugía, láser y faciales con Cinthia Padilla — manos expertas, cuidado seguro, financiamiento disponible.">Body sculpting, post-surgery recovery, laser, and facials with Cinthia Padilla — expert hands, safe care, financing available.</p>
+      <div class="hero-cta" style="margin-top:26px">
+        <a class="btn" href="https://beautyzoneaustin.glossgenius.com/" target="_blank" rel="noopener" data-en="Book Now" data-es="Reserva ahora">Book Now</a>
+        <a class="btn btn-ghost" href="#founder" data-en="Meet Cinthia" data-es="Conoce a Cinthia">Meet Cinthia</a>
+      </div>
+    </div>
+    <div class="hero-media" role="img" aria-label="Founder Cinthia Padilla in her white coat at Beauty Zone Austin — replace with real photo">
+      <div class="frame"></div>
+      <span class="caption" data-en="Cinthia Padilla, Founder — 23+ years in advanced aesthetics" data-es="Cinthia Padilla, Fundadora — más de 23 años en estética avanzada">Cinthia Padilla, Founder — 23+ years in advanced aesthetics</span>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST STRIP -->
+<div class="trust">
+  <div class="row wrap">
+    <div class="stat"><b>23+</b><span data-en="years in practice" data-es="años de experiencia">years in practice</span></div>
+    <div class="stat"><b data-en="Medical Director" data-es="Director Médico">Medical Director</b><span data-en="supervised" data-es="supervisado">supervised</span></div>
+    <div class="stat"><b>30.6K</b><span data-en="Instagram community" data-es="comunidad en Instagram">Instagram community</span></div>
+    <div class="stat"><b data-en="EN / ES" data-es="EN / ES">EN / ES</b><span data-en="care in your language" data-es="atención en tu idioma">care in your language</span></div>
+  </div>
+</div>
+
+<!-- THE DIFFERENCE -->
+<section class="wrap">
+  <span class="eyebrow" data-en="The difference" data-es="La diferencia">The difference</span>
+  <h2 data-en="Why North Austin trusts Beauty Zone" data-es="Por qué el norte de Austin confía en Beauty Zone">Why North Austin trusts Beauty Zone</h2>
+  <div class="grid4">
+    <div class="pillar"><div class="num">01</div><h3 data-en="23+ years, one trusted name" data-es="Más de 23 años, un nombre de confianza">23+ years, one trusted name</h3><p data-en="Cinthia Padilla has been building this practice since she started delivering treatments from her apartment. That history is now yours to rely on." data-es="Cinthia Padilla ha construido esta práctica desde que empezó a ofrecer tratamientos desde su apartamento. Esa historia ahora está a tu disposición.">Cinthia Padilla has been building this practice since she started delivering treatments from her apartment. That history is now yours to rely on.</p></div>
+    <div class="pillar"><div class="num">02</div><h3 data-en="Medically supervised" data-es="Supervisión médica">Medically supervised</h3><p data-en="Every treatment is performed under medical director supervision, with safety and a real assessment first." data-es="Cada tratamiento se realiza bajo la supervisión de un director médico, con seguridad y una evaluación real primero.">Every treatment is performed under medical director supervision, with safety and a real assessment first.</p></div>
+    <div class="pillar"><div class="num">03</div><h3 data-en="Expert post-op hands" data-es="Manos expertas en post-operatorio">Expert post-op hands</h3><p data-en="A full recovery program for BBL, tummy tuck, and lipo patients who need lymphatic drainage done right." data-es="Un programa completo de recuperación para pacientes de BBL, abdominoplastia y lipo que necesitan un drenaje linfático hecho bien.">A full recovery program for BBL, tummy tuck, and lipo patients who need lymphatic drainage done right.</p></div>
+    <div class="pillar"><div class="num">04</div><h3 data-en="Financing that fits" data-es="Financiamiento a tu medida">Financing that fits</h3><p data-en="Body sculpting and post-op packages, paid over time through Cherry, so a plan is never out of reach." data-es="Paquetes de escultura corporal y post-operatorio, pagados con el tiempo a través de Cherry, para que un plan nunca esté fuera de alcance.">Body sculpting and post-op packages, paid over time through Cherry, so a plan is never out of reach.</p></div>
+  </div>
+</section>
+
+<!-- PRIORITY TREATMENTS -->
+<section id="treatments" class="wrap">
+  <span class="eyebrow" data-en="Where to start" data-es="Por dónde empezar">Where to start</span>
+  <h2 data-en="Treatments, by what you want to change" data-es="Tratamientos, según lo que quieres cambiar">Treatments, by what you want to change</h2>
+  <div class="tgrid">
+    <div class="tcard">
+      <div class="ph" role="img" aria-label="Post-op recovery treatment room"></div>
+      <div class="body">
+        <h3 data-en="Post-Op &amp; Post-Surgery Recovery" data-es="Post-Operatorio y Recuperación">Post-Op &amp; Post-Surgery Recovery</h3>
+        <p data-en="Recover safely, in expert hands. Lymphatic drainage and post-surgical care for BBL, tummy tuck, and lipo recovery." data-es="Recupérate de forma segura, en manos expertas. Drenaje linfático y cuidado post-quirúrgico para recuperación de BBL, abdominoplastia y lipo.">Recover safely, in expert hands. Lymphatic drainage and post-surgical care for BBL, tummy tuck, and lipo recovery.</p>
+        <span class="price" data-en="From $150 · packages from $1,300" data-es="Desde $150 · paquetes desde $1,300">From $150 · packages from $1,300</span>
+        <div class="links"><a href="https://beautyzoneaustin.glossgenius.com/" target="_blank" rel="noopener" data-en="Book" data-es="Reservar">Book</a><a href="#menu-postop" data-en="View menu" data-es="Ver menú">View menu</a></div>
+      </div>
+    </div>
+    <div class="tcard">
+      <div class="ph" role="img" aria-label="Body sculpting cavitation and wood therapy treatment"></div>
+      <div class="body">
+        <h3 data-en="Body Sculpting" data-es="Escultura Corporal">Body Sculpting</h3>
+        <p data-en="Contour without surgery. Cavitation, Wood Therapy, and RF skin tightening to shape and firm." data-es="Contornea sin cirugía. Cavitación, terapia de madera y radiofrecuencia para moldear y reafirmar.">Contour without surgery. Cavitation, Wood Therapy, and RF skin tightening to shape and firm.</p>
+        <span class="price" data-en="From $150" data-es="Desde $150">From $150</span>
+        <div class="links"><a href="https://beautyzoneaustin.glossgenius.com/" target="_blank" rel="noopener" data-en="Book" data-es="Reservar">Book</a><a href="#menu-sculpt" data-en="View menu" data-es="Ver menú">View menu</a></div>
+      </div>
+    </div>
+    <div class="tcard">
+      <div class="ph" role="img" aria-label="Laser hair removal treatment"></div>
+      <div class="body">
+        <h3 data-en="Laser Hair Removal" data-es="Depilación Láser">Laser Hair Removal</h3>
+        <p data-en="Smooth, every zone. A full bilingual laser menu, single sessions or packages." data-es="Piel suave, cada zona. Un menú de depilación láser bilingüe, sesiones individuales o paquetes.">Smooth, every zone. A full bilingual laser menu, single sessions or packages.</p>
+        <span class="price" data-en="From $30" data-es="Desde $30">From $30</span>
+        <div class="links"><a href="https://beautyzoneaustin.glossgenius.com/" target="_blank" rel="noopener" data-en="Book" data-es="Reservar">Book</a><a href="#menu-laser" data-en="View menu" data-es="Ver menú">View menu</a></div>
+      </div>
+    </div>
+    <div class="tcard">
+      <div class="ph" role="img" aria-label="Advanced hydrafacial and skin treatment"></div>
+      <div class="body">
+        <h3 data-en="Advanced Facials" data-es="Faciales Avanzados">Advanced Facials</h3>
+        <p data-en="Results-driven glow. Hydrafacial, Exosome, and PDRN treatments tailored to your skin." data-es="Un brillo con resultados. Hydrafacial, Exosomas y PDRN personalizados para tu piel.">Results-driven glow. Hydrafacial, Exosome, and PDRN treatments tailored to your skin.</p>
+        <span class="price" data-en="From $200" data-es="Desde $200">From $200</span>
+        <div class="links"><a href="https://beautyzoneaustin.glossgenius.com/" target="_blank" rel="noopener" data-en="Book" data-es="Reservar">Book</a><a href="#menu-facial" data-en="View menu" data-es="Ver menú">View menu</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOUNDER -->
+<section id="founder" class="section-white">
+  <div class="wrap founder">
+    <div class="founder-photo" role="img" aria-label="Portrait of Cinthia Padilla, founder — replace with real photo">
+      <div class="frame"></div>
+      <span class="cap" data-en="Cinthia Padilla, Founder of Beauty Zone Austin" data-es="Cinthia Padilla, Fundadora de Beauty Zone Austin">Cinthia Padilla, Founder of Beauty Zone Austin</span>
+    </div>
+    <div>
+      <span class="eyebrow" data-en="The hands behind Beauty Zone" data-es="Las manos detrás de Beauty Zone">The hands behind Beauty Zone</span>
+      <h2 data-en="Meet Cinthia Padilla" data-es="Conoce a Cinthia Padilla">Meet Cinthia Padilla</h2>
+      <p data-en="Cinthia started working at 16, training as an esthetician long before she had a business of her own. As a single mother building a new life in Austin, she began by bringing treatments to clients from her apartment while she earned the licensing to open a real medspa." data-es="Cinthia comenzó a trabajar a los 16 años, formándose como esteticista mucho antes de tener su propio negocio. Como madre soltera construyendo una nueva vida en Austin, comenzó llevando tratamientos a sus clientas desde su apartamento mientras obtenía las licencias para abrir un medspa de verdad.">Cinthia started working at 16, training as an esthetician long before she had a business of her own. As a single mother building a new life in Austin, she began by bringing treatments to clients from her apartment while she earned the licensing to open a real medspa.</p>
+      <p style="margin-top:14px" data-en="Twenty-three years later, that apartment has become Beauty Zone Austin — a medical-director-supervised practice built for Austin's Latin community, where Cinthia still leads with the same hands that started it all." data-es="Veintitrés años después, ese apartamento se convirtió en Beauty Zone Austin, una práctica supervisada por un director médico, construida para la comunidad latina de Austin, donde Cinthia sigue liderando con las mismas manos que lo empezaron todo.">Twenty-three years later, that apartment has become Beauty Zone Austin — a medical-director-supervised practice built for Austin's Latin community, where Cinthia still leads with the same hands that started it all.</p>
+      <blockquote class="founder-quote">
+        <span data-en="&ldquo;Passion is the engine that drives my life, and my profession is what I'm truly passionate about. I am happy to have the satisfaction of a happy patient who is satisfied with my work.&rdquo;" data-es="&ldquo;La pasión es el motor que mueve mi vida, y mi profesión es lo que realmente me apasiona. Soy feliz de tener la satisfacción de una paciente contenta con mi trabajo.&rdquo;">&ldquo;Passion is the engine that drives my life, and my profession is what I'm truly passionate about. I am happy to have the satisfaction of a happy patient who is satisfied with my work.&rdquo;</span>
+        <span class="who" data-en="— Cinthia Padilla, Founder" data-es="— Cinthia Padilla, Fundadora">— Cinthia Padilla, Founder</span>
+      </blockquote>
+      <a class="btn" href="https://beautyzoneaustin.glossgenius.com/" target="_blank" rel="noopener" data-en="Book with Cinthia's team" data-es="Reserva con el equipo de Cinthia">Book with Cinthia's team</a>
+    </div>
+  </div>
+</section>
+
+<!-- FULL MENU -->
+<section class="wrap">
+  <span class="eyebrow" data-en="The full menu" data-es="El menú completo">The full menu</span>
+  <h2 data-en="Every treatment, real prices" data-es="Cada tratamiento, precios reales">Every treatment, real prices</h2>
+  <p data-en="A sample of the full menu below. Book online to see every service, package, and current price." data-es="Una muestra del menú completo abajo. Reserva en línea para ver cada servicio, paquete y precio actual.">A sample of the full menu below. Book online to see every service, package, and current price.</p>
+
+  <div class="menu-cats">
+    <details class="menu-cat" id="menu-sculpt" open>
+      <summary><span data-en="Body Sculpting &amp; Contouring" data-es="Escultura Corporal">Body Sculpting &amp; Contouring</span><span class="plus">+</span></summary>
+      <div class="items">
+        <div class="menu-item"><span class="nm">Cavitation · 55 min</span><span class="pr">$150</span></div>
+        <div class="menu-item"><span class="nm">Wood Therapy · 75 min</span><span class="pr">$150</span></div>
+        <div class="menu-item"><span class="nm">Skin Tightening (RF) · 55 min</span><span class="pr">$150</span></div>
+        <div class="menu-item"><span class="nm">Vacuum Butt Lift · 75 min</span><span class="pr">$200</span></div>
+        <div class="menu-item"><span class="nm">Wood Therapy Package x10</span><span class="pr">$1,000</span></div>
+        <div class="menu-item"><span class="nm">Premium Butt Lift Program x10</span><span class="pr">$1,300</span></div>
+      </div>
+    </details>
+    <details class="menu-cat" id="menu-postop">
+      <summary><span data-en="Post-Surgery Recovery &amp; Lymphatic Drainage" data-es="Recuperación Post-Cirugía y Drenaje Linfático">Post-Surgery Recovery &amp; Lymphatic Drainage</span><span class="plus">+</span></summary>
+      <div class="items">
+        <div class="menu-item"><span class="nm">Post-Surgery Care · 75 min</span><span class="pr">$150</span></div>
+        <div class="menu-item"><span class="nm">Lymphatic Drainage · 75 min</span><span class="pr">$150</span></div>
+        <div class="menu-item"><span class="nm">Post-Op Care Package x15</span><span class="pr">$1,300</span></div>
+        <div class="menu-item"><span class="nm">Post-Op Care Package x20</span><span class="pr">$1,700</span></div>
+        <div class="menu-item"><span class="nm">Post-Op Recovery Package x25</span><span class="pr">$2,000</span></div>
+        <div class="menu-item"><span class="nm">Lymphatic Drainage Package x10</span><span class="pr">$900</span></div>
+      </div>
+    </details>
+    <details class="menu-cat" id="menu-facial">
+      <summary><span data-en="Advanced Facials" data-es="Faciales Avanzados">Advanced Facials</span><span class="plus">+</span></summary>
+      <div class="items">
+        <div class="menu-item"><span class="nm">Express Facial · 30 min</span><span class="pr">$80</span></div>
+        <div class="menu-item"><span class="nm">Signature Hydrafacial · 50 min</span><span class="pr">$200</span></div>
+        <div class="menu-item"><span class="nm">Deluxe Hydrafacial · 75 min</span><span class="pr">$250</span></div>
+        <div class="menu-item"><span class="nm">Glass Skin Facial · 75 min</span><span class="pr">$320</span></div>
+        <div class="menu-item"><span class="nm">Exosome Skin Regeneration · 75 min</span><span class="pr">$420</span></div>
+        <div class="menu-item"><span class="nm">HIFU · 60 min</span><span class="pr">$300</span></div>
+      </div>
+    </details>
+    <details class="menu-cat" id="menu-laser">
+      <summary><span data-en="Laser Hair Removal / Depilación Láser" data-es="Depilación Láser">Laser Hair Removal / Depilación Láser</span><span class="plus">+</span></summary>
+      <div class="items">
+        <div class="menu-item"><span class="nm">Underarms · 10 min</span><span class="pr">$40</span></div>
+        <div class="menu-item"><span class="nm">Bikini Line · 15 min</span><span class="pr">$50</span></div>
+        <div class="menu-item"><span class="nm">Full Legs · 30 min</span><span class="pr">$100</span></div>
+        <div class="menu-item"><span class="nm">Full Face · 10 min</span><span class="pr">$55</span></div>
+        <div class="menu-item"><span class="nm">Full Body · 40 min</span><span class="pr">$220</span></div>
+        <div class="menu-item"><span class="nm">Full Body Package x6</span><span class="pr">$890</span></div>
+      </div>
+    </details>
+    <details class="menu-cat">
+      <summary><span data-en="Botox &amp; Filler" data-es="Botox y Relleno">Botox &amp; Filler</span><span class="plus">+</span></summary>
+      <div class="items">
+        <div class="menu-item"><span class="nm">Botox Packages</span><span class="pr">from $240</span></div>
+        <div class="menu-item"><span class="nm">Mini Lip Hydration · 40 min</span><span class="pr">$450</span></div>
+        <div class="menu-item"><span class="nm">Signature Lip Design · 60 min</span><span class="pr">$1,099</span></div>
+        <div class="menu-item"><span class="nm">Filler Cheek Enhancement · 40 min</span><span class="pr">$850</span></div>
+        <div class="menu-item"><span class="nm">Filler Jawline Mini · 60 min</span><span class="pr">$450</span></div>
+        <div class="menu-item"><span class="nm">Hyaluronidase Filler Dissolver</span><span class="pr">$385</span></div>
+      </div>
+    </details>
+    <details class="menu-cat">
+      <summary><span data-en="Lashes, Brows &amp; Waxing" data-es="Pestañas, Cejas y Depilación con Cera">Lashes, Brows &amp; Waxing</span><span class="plus">+</span></summary>
+      <div class="items">
+        <div class="menu-item"><span class="nm">Lash Lift + Tint · 60 min</span><span class="pr">$90</span></div>
+        <div class="menu-item"><span class="nm">Brow Lamination + Tint + Waxing</span><span class="pr">$100</span></div>
+        <div class="menu-item"><span class="nm">Full Brazilian Wax · 30 min</span><span class="pr">$70</span></div>
+        <div class="menu-item"><span class="nm">Full Legs Wax · 40 min</span><span class="pr">$80</span></div>
+        <div class="menu-item"><span class="nm">HennaBrows + Waxing</span><span class="pr">$45</span></div>
+        <div class="menu-item"><span class="nm">Full Face Wax · 30 min</span><span class="pr">$60</span></div>
+      </div>
+    </details>
+  </div>
+  <p class="menu-note" data-en="Individual results vary. Pricing reflects current menu at time of publishing and is subject to change — confirm at booking." data-es="Los resultados individuales varían. Los precios reflejan el menú actual al momento de la publicación y están sujetos a cambio; confirma al reservar.">Individual results vary. Pricing reflects current menu at time of publishing and is subject to change — confirm at booking.</p>
+</section>
+
+<!-- PROCESS -->
+<section class="section-oat">
+  <div class="wrap">
+    <span class="eyebrow" data-en="How it works" data-es="Cómo funciona">How it works</span>
+    <h2 data-en="Three steps to your plan" data-es="Tres pasos hacia tu plan">Three steps to your plan</h2>
+    <div class="steps">
+      <div class="step"><div class="circle">1</div><h3 data-en="Free consultation" data-es="Consulta gratuita">Free consultation</h3><p data-en="Tell us your goals and ask every question. No pressure." data-es="Cuéntanos tus metas y pregunta todo. Sin presión.">Tell us your goals and ask every question. No pressure.</p></div>
+      <div class="step"><div class="circle">2</div><h3 data-en="Custom plan + financing" data-es="Plan personalizado + financiamiento">Custom plan + financing</h3><p data-en="A plan built for you, with Cherry financing to spread the cost." data-es="Un plan hecho para ti, con financiamiento Cherry para pagar con el tiempo.">A plan built for you, with Cherry financing to spread the cost.</p></div>
+      <div class="step"><div class="circle">3</div><h3 data-en="Book &amp; recover in expert hands" data-es="Reserva y recupérate en manos expertas">Book &amp; recover in expert hands</h3><p data-en="Book online in one tap and start your care with a medically supervised team." data-es="Reserva en línea con un toque y comienza tu cuidado con un equipo supervisado médicamente.">Book online in one tap and start your care with a medically supervised team.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FINANCING -->
+<section id="financing" class="wrap">
+  <div class="finance">
+    <span class="eyebrow" style="color:#E9D8B0" data-en="Financing" data-es="Financiamiento">Financing</span>
+    <h2 data-en="Pay over time with Cherry" data-es="Paga con el tiempo con Cherry">Pay over time with Cherry</h2>
+    <p data-en="Apply in minutes and spread the cost of body sculpting, post-op, or facial packages over time. Subject to approval." data-es="Aplica en minutos y paga tus paquetes de escultura corporal, post-operatorio o faciales con el tiempo. Sujeto a aprobación.">Apply in minutes and spread the cost of body sculpting, post-op, or facial packages over time. Subject to approval.</p>
+    <a class="btn" href="https://pay.withcherry.com/beautyzoneaustin" target="_blank" rel="noopener" data-en="Apply with Cherry" data-es="Aplica con Cherry">Apply with Cherry</a>
+  </div>
+</section>
+
+<!-- COMMUNITY -->
+<section class="section-white">
+  <div class="wrap community">
+    <div>
+      <span class="eyebrow" data-en="Trusted by North Austin" data-es="Con la confianza del norte de Austin">Trusted by North Austin</span>
+      <h2 data-en="23 years of real results, shared with consent" data-es="23 años de resultados reales, compartidos con consentimiento">23 years of real results, shared with consent</h2>
+      <p data-en="Beauty Zone Austin's before-and-after work and client stories live on Instagram, where 30,600+ followers already know Cinthia's hands. Follow along, or ask to see real examples relevant to your treatment at your consultation." data-es="El trabajo de antes y después de Beauty Zone Austin y las historias de sus clientas están en Instagram, donde más de 30,600 seguidores ya conocen las manos de Cinthia. Síguenos, o pide ver ejemplos reales relevantes a tu tratamiento en tu consulta.">Beauty Zone Austin's before-and-after work and client stories live on Instagram, where 30,600+ followers already know Cinthia's hands. Follow along, or ask to see real examples relevant to your treatment at your consultation.</p>
+    </div>
+    <a class="badge" href="https://instagram.com/beautyzoneaustin" target="_blank" rel="noopener">
+      <span style="font-size:26px">📷</span>
+      <span><b>30.6K</b><br><span style="font-size:12px;color:var(--muted)">@beautyzoneaustin</span></span>
+    </a>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="wrap faq">
+  <span class="eyebrow" data-en="Good to know" data-es="Bueno saber">Good to know</span>
+  <h2 data-en="Frequently asked questions" data-es="Preguntas frecuentes">Frequently asked questions</h2>
+
+  <details>
+    <summary data-en="Do I need a consultation before booking?" data-es="¿Necesito una consulta antes de reservar?">Do I need a consultation before booking?</summary>
+    <p data-en="Most treatments can be booked directly online. For Botox, filler, and post-op recovery plans, we recommend starting with a consultation so your plan is built around your goals and health history." data-es="La mayoría de los tratamientos se pueden reservar directamente en línea. Para Botox, rellenos y planes de recuperación post-operatoria, recomendamos comenzar con una consulta para construir tu plan según tus metas y tu historial de salud.">Most treatments can be booked directly online. For Botox, filler, and post-op recovery plans, we recommend starting with a consultation so your plan is built around your goals and health history.</p>
+  </details>
+  <details>
+    <summary data-en="Is Beauty Zone Austin medically supervised?" data-es="¿Beauty Zone Austin está supervisado médicamente?">Is Beauty Zone Austin medically supervised?</summary>
+    <p data-en="Yes. Beauty Zone Austin operates under medical director supervision, and treatments are performed by trained, licensed staff." data-es="Sí. Beauty Zone Austin opera bajo la supervisión de un director médico, y los tratamientos son realizados por personal capacitado y con licencia.">Yes. Beauty Zone Austin operates under medical director supervision, and treatments are performed by trained, licensed staff.</p>
+  </details>
+  <details>
+    <summary data-en="Do you offer post-surgery recovery care?" data-es="¿Ofrecen cuidado de recuperación post-cirugía?">Do you offer post-surgery recovery care?</summary>
+    <p data-en="Yes. Our post-op and lymphatic drainage packages are designed to support recovery after procedures like BBL, tummy tuck, and liposuction. We build a session plan around your surgeon's timeline. Results vary by individual healing and aftercare." data-es="Sí. Nuestros paquetes de post-operatorio y drenaje linfático están diseñados para apoyar la recuperación después de procedimientos como BBL, abdominoplastia y liposucción. Construimos un plan de sesiones según el calendario de tu cirujano. Los resultados varían según la sanación individual y el cuidado posterior.">Yes. Our post-op and lymphatic drainage packages are designed to support recovery after procedures like BBL, tummy tuck, and liposuction. We build a session plan around your surgeon's timeline. Results vary by individual healing and aftercare.</p>
+  </details>
+  <details>
+    <summary data-en="Do you speak Spanish?" data-es="¿Hablan español?">Do you speak Spanish?</summary>
+    <p data-en="Yes, our team provides care in both English and Spanish." data-es="Sí, nuestro equipo ofrece atención en inglés y español.">Yes, our team provides care in both English and Spanish.</p>
+  </details>
+  <details>
+    <summary data-en="Do you offer financing?" data-es="¿Ofrecen financiamiento?">Do you offer financing?</summary>
+    <p data-en="Yes, through Cherry, so you can spread the cost of body sculpting, post-op, or facial packages over time." data-es="Sí, a través de Cherry, para que puedas pagar tus paquetes de escultura corporal, post-operatorio o faciales con el tiempo.">Yes, through Cherry, so you can spread the cost of body sculpting, post-op, or facial packages over time.</p>
+  </details>
+  <details>
+    <summary data-en="Will results look natural?" data-es="¿Los resultados se verán naturales?">Will results look natural?</summary>
+    <p data-en="Every plan is customized to you. We aim for subtle, natural-looking results, never overdone. Individual results vary." data-es="Cada plan se personaliza para ti. Buscamos resultados sutiles y naturales, nunca exagerados. Los resultados individuales varían.">Every plan is customized to you. We aim for subtle, natural-looking results, never overdone. Individual results vary.</p>
+  </details>
+</section>
+
+<!-- LOCATION -->
+<section id="location" class="wrap">
+  <div class="loc">
+    <div>
+      <span class="eyebrow" data-en="Visit us" data-es="Visítanos">Visit us</span>
+      <h2 data-en="Body sculpting &amp; post-op recovery in North Austin" data-es="Escultura corporal y recuperación post-operatoria en el norte de Austin">Body sculpting &amp; post-op recovery in North Austin</h2>
+      <p>13343 U.S. 183, Austin, TX 78750<br><a href="tel:15125861010" style="color:var(--ink);font-weight:500">(512) 586-1010</a></p>
+      <p style="margin-top:8px" data-en="Call or book online to confirm current hours." data-es="Llama o reserva en línea para confirmar el horario actual.">Call or book online to confirm current hours.</p>
+      <p style="margin-top:20px"><a class="btn" href="https://beautyzoneaustin.glossgenius.com/" target="_blank" rel="noopener" data-en="Book Now" data-es="Reserva ahora">Book Now</a></p>
+    </div>
+    <div class="map">
+      <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map to Beauty Zone Austin" src="https://www.google.com/maps?q=13343+US-183,+Austin,+TX+78750&output=embed"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="finalcta">
+  <div class="wrap">
+    <span class="script">Beauty Zone Austin</span>
+    <h2 style="margin-top:10px" data-en="Your plan starts with one conversation." data-es="Tu plan comienza con una conversación.">Your plan starts with one conversation.</h2>
+    <p data-en="23+ years, medical director supervised, se habla español." data-es="Más de 23 años, supervisado por director médico, se habla español.">23+ years, medical director supervised, se habla español.</p>
+    <a class="btn" href="https://beautyzoneaustin.glossgenius.com/" target="_blank" rel="noopener" data-en="Book Now" data-es="Reserva ahora">Book Now</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fcols">
+      <div>
+        <div class="logo" style="color:#fff">Beauty Zone Austin</div>
+        <p style="margin-top:12px;max-width:34ch" data-en="North Austin's medical-director-supervised medspa for body sculpting, post-op recovery, laser, and facials. Se habla español." data-es="El medspa del norte de Austin, supervisado por un director médico, para escultura corporal, recuperación post-operatoria, láser y faciales. Se habla español.">North Austin's medical-director-supervised medspa for body sculpting, post-op recovery, laser, and facials. Se habla español.</p>
+      </div>
+      <div>
+        <h4 data-en="Treatments" data-es="Tratamientos">Treatments</h4>
+        <a href="#menu-postop" data-en="Post-Op Recovery" data-es="Post-Operatorio">Post-Op Recovery</a>
+        <a href="#menu-sculpt" data-en="Body Sculpting" data-es="Escultura Corporal">Body Sculpting</a>
+        <a href="#menu-laser" data-en="Laser Hair Removal" data-es="Depilación Láser">Laser Hair Removal</a>
+        <a href="#menu-facial" data-en="Facials" data-es="Faciales">Facials</a>
+      </div>
+      <div>
+        <h4 data-en="Visit" data-es="Visítanos">Visit</h4>
+        <p style="color:rgba(255,255,255,.75);margin:0">13343 U.S. 183<br>Austin, TX 78750</p>
+        <a href="tel:15125861010">(512) 586-1010</a>
+        <a href="https://beautyzoneaustin.glossgenius.com/" target="_blank" rel="noopener" data-en="Book online" data-es="Reserva en línea">Book online</a>
+      </div>
+      <div>
+        <h4 data-en="Follow" data-es="Síguenos">Follow</h4>
+        <a href="https://instagram.com/beautyzoneaustin" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.facebook.com/Beauty-Zone-109459890930236/" target="_blank" rel="noopener">Facebook</a>
+        <a href="https://pay.withcherry.com/beautyzoneaustin" target="_blank" rel="noopener">Cherry financing</a>
+      </div>
+    </div>
+    <p class="legal" data-en="Beauty Zone Austin is a medical-director-supervised medspa. Botox, dermal filler, and other prescription or medical treatments require a consultation and are provided under medical supervision by licensed staff. Body sculpting, post-op recovery, laser, and facial results vary by individual and are not guaranteed. Financing available through Cherry, subject to approval. © 2026 Beauty Zone Austin. All rights reserved." data-es="Beauty Zone Austin es un medspa supervisado por un director médico. Botox, rellenos dérmicos y otros tratamientos médicos o de prescripción requieren una consulta y se realizan bajo supervisión médica por personal con licencia. Los resultados de escultura corporal, recuperación post-operatoria, láser y faciales varían según el individuo y no están garantizados. Financiamiento disponible a través de Cherry, sujeto a aprobación. © 2026 Beauty Zone Austin. Todos los derechos reservados.">Beauty Zone Austin is a medical-director-supervised medspa. Botox, dermal filler, and other prescription or medical treatments require a consultation and are provided under medical supervision by licensed staff. Body sculpting, post-op recovery, laser, and facial results vary by individual and are not guaranteed. Financing available through Cherry, subject to approval. © 2026 Beauty Zone Austin. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- STICKY MOBILE BOOK BAR -->
+<div class="bookbar">
+  <a class="call" href="tel:15125861010" data-en="Call" data-es="Llamar">Call</a>
+  <a class="book" href="https://beautyzoneaustin.glossgenius.com/" target="_blank" rel="noopener" data-en="Book Now" data-es="Reserva ahora">Book Now</a>
+</div>
+
+<!-- JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MedicalBusiness",
+  "name": "Beauty Zone Austin",
+  "url": "https://www.beautyzoneaustin.com/",
+  "telephone": "+1-512-586-1010",
+  "priceRange": "$$",
+  "image": "https://www.beautyzoneaustin.com/og-image.jpg",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "13343 U.S. 183",
+    "addressLocality": "Austin",
+    "addressRegion": "TX",
+    "postalCode": "78750",
+    "addressCountry": "US"
+  },
+  "areaServed": { "@type": "City", "name": "Austin" },
+  "sameAs": [
+    "https://instagram.com/beautyzoneaustin",
+    "https://www.facebook.com/Beauty-Zone-109459890930236/"
+  ],
+  "medicalSpecialty": "CosmeticProcedure",
+  "founder": {
+    "@type": "Person",
+    "name": "Cinthia Padilla",
+    "jobTitle": "Founder",
+    "description": "Founder of Beauty Zone Austin with 23+ years in advanced aesthetics, body sculpting, and post-surgical recovery."
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Beauty Zone Austin Treatments",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "MedicalProcedure", "name": "Post-Surgery Recovery Care" } },
+      { "@type": "Offer", "itemOffered": { "@type": "MedicalProcedure", "name": "Body Sculpting / Cavitation" } },
+      { "@type": "Offer", "itemOffered": { "@type": "MedicalProcedure", "name": "Laser Hair Removal" } },
+      { "@type": "Offer", "itemOffered": { "@type": "MedicalProcedure", "name": "Advanced Facials" } }
+    ]
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Do I need a consultation before booking?", "acceptedAnswer": { "@type": "Answer", "text": "Most treatments can be booked directly online. For Botox, filler, and post-op recovery plans we recommend starting with a consultation so your plan is built around your goals and health history." } },
+    { "@type": "Question", "name": "Is Beauty Zone Austin medically supervised?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Beauty Zone Austin operates under medical director supervision, and treatments are performed by trained, licensed staff." } },
+    { "@type": "Question", "name": "Do you offer post-surgery recovery care?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Post-op and lymphatic drainage packages support recovery after procedures like BBL, tummy tuck, and liposuction. Results vary by individual healing and aftercare." } },
+    { "@type": "Question", "name": "Do you speak Spanish?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, the team provides care in both English and Spanish." } },
+    { "@type": "Question", "name": "Do you offer financing?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, through Cherry, so clients can spread the cost of body sculpting, post-op, or facial packages over time." } }
+  ]
+}
+</script>
+
+<script>
+(function(){
+  var toggle = document.getElementById('langToggle');
+  var htmlRoot = document.getElementById('html-root');
+  var titleTag = document.getElementById('title-tag');
+  var titles = {
+    en: "Body Sculpting & Post-Op Recovery in North Austin | Beauty Zone Austin",
+    es: "Escultura Corporal y Recuperación Post-Operatoria en el Norte de Austin | Beauty Zone Austin"
+  };
+  function setLang(lang){
+    document.querySelectorAll('[data-en]').forEach(function(el){
+      var text = el.getAttribute('data-' + lang);
+      if(text !== null) el.innerHTML = text;
+    });
+    document.querySelectorAll('.lang-toggle span').forEach(function(s){
+      s.classList.toggle('active', s.getAttribute('data-lang') === lang);
+    });
+    htmlRoot.setAttribute('lang', lang);
+    titleTag.textContent = titles[lang];
+    localStorage.setItem('bza-lang', lang);
+  }
+  toggle.addEventListener('click', function(){
+    var current = htmlRoot.getAttribute('lang') === 'es' ? 'es' : 'en';
+    setLang(current === 'en' ? 'es' : 'en');
+  });
+  var saved = localStorage.getItem('bza-lang');
+  if(saved === 'es') setLang('es');
+})();
+</script>
+
+</body>
+</html>
