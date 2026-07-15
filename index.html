@@ -182,9 +182,136 @@ footer a:hover{color:var(--gold)}
 .bookbar .call{border:1px solid var(--ink);color:var(--ink)}
 .bookbar .book{background:var(--gold);color:#fff}
 @media(max-width:920px){.bookbar{display:flex}body{padding-bottom:66px}}
+
+/* ================= ANIMATION + LAYOUT INTEREST LAYER ================= */
+@media(prefers-reduced-motion: reduce){*{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}}
+
+/* scroll progress bar */
+.progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--gold-deep));width:0%;z-index:90;transition:width .1s linear}
+
+/* header state on scroll */
+header{transition:box-shadow .3s ease,padding .3s ease}
+header.scrolled{box-shadow:0 8px 24px rgba(28,23,18,.08)}
+
+/* generic scroll-reveal */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s cubic-bezier(.22,.68,0,1.01),transform .7s cubic-bezier(.22,.68,0,1.01)}
+.reveal.in-view{opacity:1;transform:translateY(0)}
+.reveal-scale{opacity:0;transform:scale(.94);transition:opacity .8s ease,transform .8s cubic-bezier(.22,.68,0,1.01)}
+.reveal-scale.in-view{opacity:1;transform:scale(1)}
+.reveal-left{opacity:0;transform:translateX(-32px);transition:opacity .7s ease,transform .7s cubic-bezier(.22,.68,0,1.01)}
+.reveal-left.in-view{opacity:1;transform:translateX(0)}
+.reveal-right{opacity:0;transform:translateX(32px);transition:opacity .7s ease,transform .7s cubic-bezier(.22,.68,0,1.01)}
+.reveal-right.in-view{opacity:1;transform:translateX(0)}
+.stagger .reveal:nth-child(1),.stagger .reveal-scale:nth-child(1){transition-delay:.03s}
+.stagger .reveal:nth-child(2),.stagger .reveal-scale:nth-child(2){transition-delay:.12s}
+.stagger .reveal:nth-child(3),.stagger .reveal-scale:nth-child(3){transition-delay:.21s}
+.stagger .reveal:nth-child(4),.stagger .reveal-scale:nth-child(4){transition-delay:.30s}
+.stagger .reveal:nth-child(5),.stagger .reveal-scale:nth-child(5){transition-delay:.39s}
+.stagger .reveal:nth-child(6),.stagger .reveal-scale:nth-child(6){transition-delay:.48s}
+
+/* eyebrow draw-in underline */
+.eyebrow{position:relative;display:inline-block;padding-bottom:6px}
+.eyebrow::after{content:"";position:absolute;left:0;bottom:0;height:1px;width:0;background:var(--gold);transition:width .8s cubic-bezier(.22,.68,0,1.01) .15s}
+.reveal.in-view .eyebrow::after,.in-view>.eyebrow::after{width:38px}
+
+/* floating ambient blobs */
+.blob{position:absolute;border-radius:50%;filter:blur(60px);opacity:.35;pointer-events:none;z-index:0;animation:float 14s ease-in-out infinite}
+.blob-gold{background:radial-gradient(circle,var(--gold),transparent 70%)}
+.blob-oat{background:radial-gradient(circle,var(--oat),transparent 70%)}
+@keyframes float{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(24px,-30px) scale(1.08)}}
+section{position:relative;overflow:hidden}
+.hero,header,.trust,.finalcta{overflow:visible}
+
+/* hero entrance */
+.hero-copy .eyebrow,.hero-copy h1,.hero-copy .proof,.hero-copy>p:not(.proof),.hero-cta{opacity:0;transform:translateY(18px);animation:heroUp .8s cubic-bezier(.22,.68,0,1.01) forwards}
+.hero-copy .eyebrow{animation-delay:.05s}
+.hero-copy h1{animation-delay:.16s}
+.hero-copy .proof{animation-delay:.30s}
+.hero-copy>p:not(.proof){animation-delay:.40s}
+.hero-cta{animation-delay:.52s}
+@keyframes heroUp{to{opacity:1;transform:translateY(0)}}
+.hero-media{animation:heroZoom 1.4s cubic-bezier(.22,.68,0,1.01) forwards;transform-origin:center}
+@keyframes heroZoom{from{opacity:0;transform:scale(1.08)}to{opacity:1;transform:scale(1)}}
+.hero-media .caption{transform:translateY(8px);opacity:0;animation:capIn .6s ease forwards;animation-delay:.9s}
+@keyframes capIn{to{transform:translateY(0);opacity:1}}
+.hero-badge{position:absolute;top:-18px;left:-18px;background:var(--surface);border:1px solid var(--line);border-radius:50%;width:92px;height:92px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;box-shadow:0 14px 30px rgba(28,23,18,.14);z-index:2;opacity:0;animation:badgeIn .6s cubic-bezier(.22,.68,0,1.01) forwards;animation-delay:1.05s}
+.hero-badge b{font-family:var(--serif);font-size:20px;color:var(--gold-deep);line-height:1}
+.hero-badge span{font-size:9px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-top:2px}
+@keyframes badgeIn{from{opacity:0;transform:scale(.6) rotate(-8deg)}to{opacity:1;transform:scale(1) rotate(0)}}
+.scroll-cue{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:6px;color:rgba(255,255,255,.85);font-size:10px;letter-spacing:.14em;text-transform:uppercase;z-index:2}
+.scroll-cue .dot{width:5px;height:5px;border-radius:50%;background:var(--gold);animation:scrollDot 1.6s ease-in-out infinite}
+@keyframes scrollDot{0%{transform:translateY(0);opacity:1}70%{transform:translateY(14px);opacity:0}100%{opacity:0}}
+@media(max-width:920px){.hero-badge{display:none}}
+
+/* counters */
+.trust .stat b{position:relative}
+
+/* pillars + treatment cards hover polish */
+.pillar{transition:transform .35s cubic-bezier(.22,.68,0,1.01),box-shadow .35s ease,border-color .35s ease}
+.pillar:hover{transform:translateY(-6px);box-shadow:0 20px 36px rgba(28,23,18,.1);border-color:var(--gold)}
+.pillar .num{transition:transform .35s ease}
+.pillar:hover .num{transform:scale(1.12) rotate(-4deg)}
+.tcard .ph{position:relative;overflow:hidden}
+.tcard .ph::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(28,23,18,.35));opacity:0;transition:opacity .35s ease}
+.tcard:hover .ph::after{opacity:1}
+.tcard .ph{background-size:cover!important;transition:transform .5s cubic-bezier(.22,.68,0,1.01)}
+.tcard:hover .ph{transform:scale(1.07)}
+.tcard{position:relative}
+.tcard::before{content:"";position:absolute;top:0;left:0;width:0;height:2px;background:var(--gold);transition:width .4s ease;z-index:2}
+.tcard:hover::before{width:100%}
+
+/* founder photo reveal */
+.founder-photo{clip-path:inset(0 0 0 0);box-shadow:0 24px 50px rgba(28,23,18,.16)}
+.founder-photo::before{content:"";position:absolute;inset:-14px;border:1px solid var(--gold);border-radius:8px;z-index:-1;opacity:.6}
+.founder-quote{position:relative}
+.founder-quote::before{content:"\201C";position:absolute;left:-6px;top:-30px;font-family:var(--serif);font-size:72px;color:var(--gold);opacity:.25;line-height:1}
+
+/* accordion smoother open */
+.menu-cat{transition:box-shadow .3s ease,border-color .3s ease}
+.menu-cat:hover{border-color:var(--gold)}
+.menu-cat .items{animation:accOpen .35s ease}
+@keyframes accOpen{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:translateY(0)}}
+.menu-cat summary .plus{transition:transform .3s ease}
+.menu-item{transition:padding-left .25s ease,color .25s ease}
+.menu-item:hover{padding-left:6px}
+.menu-item:hover .nm{color:var(--gold-deep)}
+
+/* process connecting line */
+.steps{position:relative}
+.steps::before{content:"";position:absolute;top:28px;left:16.5%;right:16.5%;height:1px;background:repeating-linear-gradient(90deg,var(--gold) 0 8px,transparent 8px 16px);z-index:0}
+@media(max-width:820px){.steps::before{display:none}}
+.step{position:relative;z-index:1}
+.step .circle{transition:transform .4s cubic-bezier(.22,.68,0,1.01);box-shadow:0 0 0 6px var(--section-oat-bg,var(--oat))}
+.step:hover .circle{transform:scale(1.12) rotate(-6deg)}
+
+/* financing ambient gradient shift */
+.finance{background-size:200% 200%;animation:gradientShift 8s ease infinite}
+@keyframes gradientShift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+
+/* community badge pulse */
+.community .badge{transition:transform .3s ease,box-shadow .3s ease}
+.community .badge:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 14px 28px rgba(28,23,18,.12)}
+.community .badge span:first-child{display:inline-block;animation:wiggle 3s ease-in-out infinite}
+@keyframes wiggle{0%,100%{transform:rotate(0)}50%{transform:rotate(-8deg)}}
+
+/* final cta shimmer wordmark */
+.finalcta .script{background:linear-gradient(90deg,var(--gold) 0%,#F4E3B8 50%,var(--gold) 100%);background-size:200% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shimmer 3.5s linear infinite;display:inline-block}
+@keyframes shimmer{to{background-position:200% center}}
+
+/* btn ripple-ish shine on hover */
+.btn{position:relative;overflow:hidden}
+.btn::after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(120deg,transparent,rgba(255,255,255,.5),transparent);transform:skewX(-20deg);transition:left .5s ease}
+.btn:hover::after{left:120%}
+
+/* faq micro interaction */
+.faq details{transition:background .3s ease}
+.faq details[open]{background:rgba(194,161,90,.05)}
+.faq summary::after{transition:transform .3s ease}
 </style>
 </head>
 <body>
+
+<div class="progress" id="scrollProgress"></div>
 
 <header>
   <div class="nav">
@@ -220,8 +347,10 @@ footer a:hover{color:var(--gold)}
       </div>
     </div>
     <div class="hero-media" role="img" aria-label="Beauty Zone Austin treatment space" style="background-image:url('https://static.glossgenius.com/public/salon/60f05ee77a8deaceb3b9d5292084f4e9a884a8ac/website_cover_image/e02f4c77776019e886576e99372cb915.jpeg');background-size:cover;background-position:center">
+      <div class="hero-badge"><b>23+</b><span data-en="Years" data-es="Años">Years</span></div>
       <div class="frame"></div>
       <span class="caption" data-en="Beauty Zone Austin — 23+ years in advanced aesthetics" data-es="Beauty Zone Austin — más de 23 años en estética avanzada">Beauty Zone Austin — 23+ years in advanced aesthetics</span>
+      <div class="scroll-cue"><span>Scroll</span><span class="dot"></span></div>
     </div>
   </div>
 </section>
@@ -229,31 +358,32 @@ footer a:hover{color:var(--gold)}
 <!-- TRUST STRIP -->
 <div class="trust">
   <div class="row wrap">
-    <div class="stat"><b>23+</b><span data-en="years in practice" data-es="años de experiencia">years in practice</span></div>
+    <div class="stat"><b data-count="23" data-suffix="+">0</b><span data-en="years in practice" data-es="años de experiencia">years in practice</span></div>
     <div class="stat"><b data-en="Medical Director" data-es="Director Médico">Medical Director</b><span data-en="supervised" data-es="supervisado">supervised</span></div>
-    <div class="stat"><b>30.6K</b><span data-en="Instagram community" data-es="comunidad en Instagram">Instagram community</span></div>
+    <div class="stat"><b data-count="30.6" data-suffix="K">0</b><span data-en="Instagram community" data-es="comunidad en Instagram">Instagram community</span></div>
     <div class="stat"><b data-en="EN / ES" data-es="EN / ES">EN / ES</b><span data-en="care in your language" data-es="atención en tu idioma">care in your language</span></div>
   </div>
 </div>
 
 <!-- THE DIFFERENCE -->
-<section class="wrap">
+<section class="wrap reveal">
+  <div class="blob blob-gold" style="width:340px;height:340px;top:-120px;right:-140px"></div>
   <span class="eyebrow" data-en="The difference" data-es="La diferencia">The difference</span>
   <h2 data-en="Why North Austin trusts Beauty Zone" data-es="Por qué el norte de Austin confía en Beauty Zone">Why North Austin trusts Beauty Zone</h2>
-  <div class="grid4">
-    <div class="pillar"><div class="num">01</div><h3 data-en="23+ years, one trusted name" data-es="Más de 23 años, un nombre de confianza">23+ years, one trusted name</h3><p data-en="Cinthia Padilla has been building this practice since she started delivering treatments from her apartment. That history is now yours to rely on." data-es="Cinthia Padilla ha construido esta práctica desde que empezó a ofrecer tratamientos desde su apartamento. Esa historia ahora está a tu disposición.">Cinthia Padilla has been building this practice since she started delivering treatments from her apartment. That history is now yours to rely on.</p></div>
-    <div class="pillar"><div class="num">02</div><h3 data-en="Medically supervised" data-es="Supervisión médica">Medically supervised</h3><p data-en="Every treatment is performed under medical director supervision, with safety and a real assessment first." data-es="Cada tratamiento se realiza bajo la supervisión de un director médico, con seguridad y una evaluación real primero.">Every treatment is performed under medical director supervision, with safety and a real assessment first.</p></div>
-    <div class="pillar"><div class="num">03</div><h3 data-en="Expert post-op hands" data-es="Manos expertas en post-operatorio">Expert post-op hands</h3><p data-en="A full recovery program for BBL, tummy tuck, and lipo patients who need lymphatic drainage done right." data-es="Un programa completo de recuperación para pacientes de BBL, abdominoplastia y lipo que necesitan un drenaje linfático hecho bien.">A full recovery program for BBL, tummy tuck, and lipo patients who need lymphatic drainage done right.</p></div>
-    <div class="pillar"><div class="num">04</div><h3 data-en="Financing that fits" data-es="Financiamiento a tu medida">Financing that fits</h3><p data-en="Body sculpting and post-op packages, paid over time through Cherry, so a plan is never out of reach." data-es="Paquetes de escultura corporal y post-operatorio, pagados con el tiempo a través de Cherry, para que un plan nunca esté fuera de alcance.">Body sculpting and post-op packages, paid over time through Cherry, so a plan is never out of reach.</p></div>
+  <div class="grid4 stagger">
+    <div class="pillar reveal"><div class="num">01</div><h3 data-en="23+ years, one trusted name" data-es="Más de 23 años, un nombre de confianza">23+ years, one trusted name</h3><p data-en="Cinthia Padilla has been building this practice since she started delivering treatments from her apartment. That history is now yours to rely on." data-es="Cinthia Padilla ha construido esta práctica desde que empezó a ofrecer tratamientos desde su apartamento. Esa historia ahora está a tu disposición.">Cinthia Padilla has been building this practice since she started delivering treatments from her apartment. That history is now yours to rely on.</p></div>
+    <div class="pillar reveal"><div class="num">02</div><h3 data-en="Medically supervised" data-es="Supervisión médica">Medically supervised</h3><p data-en="Every treatment is performed under medical director supervision, with safety and a real assessment first." data-es="Cada tratamiento se realiza bajo la supervisión de un director médico, con seguridad y una evaluación real primero.">Every treatment is performed under medical director supervision, with safety and a real assessment first.</p></div>
+    <div class="pillar reveal"><div class="num">03</div><h3 data-en="Expert post-op hands" data-es="Manos expertas en post-operatorio">Expert post-op hands</h3><p data-en="A full recovery program for BBL, tummy tuck, and lipo patients who need lymphatic drainage done right." data-es="Un programa completo de recuperación para pacientes de BBL, abdominoplastia y lipo que necesitan un drenaje linfático hecho bien.">A full recovery program for BBL, tummy tuck, and lipo patients who need lymphatic drainage done right.</p></div>
+    <div class="pillar reveal"><div class="num">04</div><h3 data-en="Financing that fits" data-es="Financiamiento a tu medida">Financing that fits</h3><p data-en="Body sculpting and post-op packages, paid over time through Cherry, so a plan is never out of reach." data-es="Paquetes de escultura corporal y post-operatorio, pagados con el tiempo a través de Cherry, para que un plan nunca esté fuera de alcance.">Body sculpting and post-op packages, paid over time through Cherry, so a plan is never out of reach.</p></div>
   </div>
 </section>
 
 <!-- PRIORITY TREATMENTS -->
-<section id="treatments" class="wrap">
+<section id="treatments" class="wrap reveal">
   <span class="eyebrow" data-en="Where to start" data-es="Por dónde empezar">Where to start</span>
   <h2 data-en="Treatments, by what you want to change" data-es="Tratamientos, según lo que quieres cambiar">Treatments, by what you want to change</h2>
-  <div class="tgrid">
-    <div class="tcard">
+  <div class="tgrid stagger">
+    <div class="tcard reveal-scale">
       <div class="ph" role="img" aria-label="Lymphatic drainage treatment, Beauty Zone Austin" style="background-image:url('https://static.glossgenius.com/public/service/ca94a4ac017ef52c437a9a7833ba098d82f80c36/image/cf4673b94729ee8cd1e0f2af91c18a2d.jpg');background-size:cover;background-position:center"></div>
       <div class="body">
         <h3 data-en="Post-Op &amp; Post-Surgery Recovery" data-es="Post-Operatorio y Recuperación">Post-Op &amp; Post-Surgery Recovery</h3>
@@ -262,7 +392,7 @@ footer a:hover{color:var(--gold)}
         <div class="links"><a href="https://beautyzoneaustin.glossgenius.com/" target="_blank" rel="noopener" data-en="Book" data-es="Reservar">Book</a><a href="#menu-postop" data-en="View menu" data-es="Ver menú">View menu</a></div>
       </div>
     </div>
-    <div class="tcard">
+    <div class="tcard reveal-scale">
       <div class="ph" role="img" aria-label="Cavitation body sculpting treatment, Beauty Zone Austin" style="background-image:url('https://static.glossgenius.com/public/service/c2e3db412f8e95d791dc911a5a05f5694938683b/image/5f2af7dd81e33cad03fdbb6d3c8d9d94.jpg');background-size:cover;background-position:center"></div>
       <div class="body">
         <h3 data-en="Body Sculpting" data-es="Escultura Corporal">Body Sculpting</h3>
@@ -271,7 +401,7 @@ footer a:hover{color:var(--gold)}
         <div class="links"><a href="https://beautyzoneaustin.glossgenius.com/" target="_blank" rel="noopener" data-en="Book" data-es="Reservar">Book</a><a href="#menu-sculpt" data-en="View menu" data-es="Ver menú">View menu</a></div>
       </div>
     </div>
-    <div class="tcard">
+    <div class="tcard reveal-scale">
       <div class="ph" role="img" aria-label="Laser hair removal treatment"></div>
       <div class="body">
         <h3 data-en="Laser Hair Removal" data-es="Depilación Láser">Laser Hair Removal</h3>
@@ -280,7 +410,7 @@ footer a:hover{color:var(--gold)}
         <div class="links"><a href="https://beautyzoneaustin.glossgenius.com/" target="_blank" rel="noopener" data-en="Book" data-es="Reservar">Book</a><a href="#menu-laser" data-en="View menu" data-es="Ver menú">View menu</a></div>
       </div>
     </div>
-    <div class="tcard">
+    <div class="tcard reveal-scale">
       <div class="ph" role="img" aria-label="Signature Hydrafacial treatment, Beauty Zone Austin" style="background-image:url('https://static.glossgenius.com/public/service/489b77e44e1dc346060199405ebb01a6ee70a119/image/545624d0faba56c093d2c7e27ea6f6d9.jpg');background-size:cover;background-position:center"></div>
       <div class="body">
         <h3 data-en="Advanced Facials" data-es="Faciales Avanzados">Advanced Facials</h3>
@@ -295,11 +425,11 @@ footer a:hover{color:var(--gold)}
 <!-- FOUNDER -->
 <section id="founder" class="section-white">
   <div class="wrap founder">
-    <div class="founder-photo" role="img" aria-label="Cinthia Padilla, Founder of Beauty Zone Austin" style="background-image:url('https://static.glossgenius.com/public/salon/60f05ee77a8deaceb3b9d5292084f4e9a884a8ac/website_cover_image/e02f4c77776019e886576e99372cb915.jpeg');background-size:cover;background-position:center top">
+    <div class="founder-photo reveal-left" role="img" aria-label="Cinthia Padilla, Founder of Beauty Zone Austin" style="background-image:url('https://static.glossgenius.com/public/salon/60f05ee77a8deaceb3b9d5292084f4e9a884a8ac/website_cover_image/e02f4c77776019e886576e99372cb915.jpeg');background-size:cover;background-position:center top">
       <div class="frame"></div>
       <span class="cap" data-en="Cinthia Padilla, Founder of Beauty Zone Austin" data-es="Cinthia Padilla, Fundadora de Beauty Zone Austin">Cinthia Padilla, Founder of Beauty Zone Austin</span>
     </div>
-    <div>
+    <div class="reveal-right">
       <span class="eyebrow" data-en="The hands behind Beauty Zone" data-es="Las manos detrás de Beauty Zone">The hands behind Beauty Zone</span>
       <h2 data-en="Meet Cinthia Padilla" data-es="Conoce a Cinthia Padilla">Meet Cinthia Padilla</h2>
       <p data-en="Cinthia started working at 16, training as an esthetician long before she had a business of her own. As a single mother building a new life in Austin, she began by bringing treatments to clients from her apartment while she earned the licensing to open a real medspa." data-es="Cinthia comenzó a trabajar a los 16 años, formándose como esteticista mucho antes de tener su propio negocio. Como madre soltera construyendo una nueva vida en Austin, comenzó llevando tratamientos a sus clientas desde su apartamento mientras obtenía las licencias para abrir un medspa de verdad.">Cinthia started working at 16, training as an esthetician long before she had a business of her own. As a single mother building a new life in Austin, she began by bringing treatments to clients from her apartment while she earned the licensing to open a real medspa.</p>
@@ -314,7 +444,7 @@ footer a:hover{color:var(--gold)}
 </section>
 
 <!-- FULL MENU -->
-<section class="wrap">
+<section class="wrap reveal">
   <span class="eyebrow" data-en="The full menu" data-es="El menú completo">The full menu</span>
   <h2 data-en="Every treatment, real prices" data-es="Cada tratamiento, precios reales">Every treatment, real prices</h2>
   <p data-en="A sample of the full menu below. Book online to see every service, package, and current price." data-es="Una muestra del menú completo abajo. Reserva en línea para ver cada servicio, paquete y precio actual.">A sample of the full menu below. Book online to see every service, package, and current price.</p>
@@ -391,20 +521,20 @@ footer a:hover{color:var(--gold)}
 </section>
 
 <!-- PROCESS -->
-<section class="section-oat">
-  <div class="wrap">
+<section class="section-oat" style="--section-oat-bg:var(--oat)">
+  <div class="wrap reveal">
     <span class="eyebrow" data-en="How it works" data-es="Cómo funciona">How it works</span>
     <h2 data-en="Three steps to your plan" data-es="Tres pasos hacia tu plan">Three steps to your plan</h2>
-    <div class="steps">
-      <div class="step"><div class="circle">1</div><h3 data-en="Free consultation" data-es="Consulta gratuita">Free consultation</h3><p data-en="Tell us your goals and ask every question. No pressure." data-es="Cuéntanos tus metas y pregunta todo. Sin presión.">Tell us your goals and ask every question. No pressure.</p></div>
-      <div class="step"><div class="circle">2</div><h3 data-en="Custom plan + financing" data-es="Plan personalizado + financiamiento">Custom plan + financing</h3><p data-en="A plan built for you, with Cherry financing to spread the cost." data-es="Un plan hecho para ti, con financiamiento Cherry para pagar con el tiempo.">A plan built for you, with Cherry financing to spread the cost.</p></div>
-      <div class="step"><div class="circle">3</div><h3 data-en="Book &amp; recover in expert hands" data-es="Reserva y recupérate en manos expertas">Book &amp; recover in expert hands</h3><p data-en="Book online in one tap and start your care with a medically supervised team." data-es="Reserva en línea con un toque y comienza tu cuidado con un equipo supervisado médicamente.">Book online in one tap and start your care with a medically supervised team.</p></div>
+    <div class="steps stagger">
+      <div class="step reveal"><div class="circle">1</div><h3 data-en="Free consultation" data-es="Consulta gratuita">Free consultation</h3><p data-en="Tell us your goals and ask every question. No pressure." data-es="Cuéntanos tus metas y pregunta todo. Sin presión.">Tell us your goals and ask every question. No pressure.</p></div>
+      <div class="step reveal"><div class="circle">2</div><h3 data-en="Custom plan + financing" data-es="Plan personalizado + financiamiento">Custom plan + financing</h3><p data-en="A plan built for you, with Cherry financing to spread the cost." data-es="Un plan hecho para ti, con financiamiento Cherry para pagar con el tiempo.">A plan built for you, with Cherry financing to spread the cost.</p></div>
+      <div class="step reveal"><div class="circle">3</div><h3 data-en="Book &amp; recover in expert hands" data-es="Reserva y recupérate en manos expertas">Book &amp; recover in expert hands</h3><p data-en="Book online in one tap and start your care with a medically supervised team." data-es="Reserva en línea con un toque y comienza tu cuidado con un equipo supervisado médicamente.">Book online in one tap and start your care with a medically supervised team.</p></div>
     </div>
   </div>
 </section>
 
 <!-- FINANCING -->
-<section id="financing" class="wrap">
+<section id="financing" class="wrap reveal-scale">
   <div class="finance">
     <span class="eyebrow" style="color:#E9D8B0" data-en="Financing" data-es="Financiamiento">Financing</span>
     <h2 data-en="Pay over time with Cherry" data-es="Paga con el tiempo con Cherry">Pay over time with Cherry</h2>
@@ -415,7 +545,7 @@ footer a:hover{color:var(--gold)}
 
 <!-- COMMUNITY -->
 <section class="section-white">
-  <div class="wrap community">
+  <div class="wrap community reveal">
     <div>
       <span class="eyebrow" data-en="Trusted by North Austin" data-es="Con la confianza del norte de Austin">Trusted by North Austin</span>
       <h2 data-en="23 years of real results, shared with consent" data-es="23 años de resultados reales, compartidos con consentimiento">23 years of real results, shared with consent</h2>
@@ -429,7 +559,7 @@ footer a:hover{color:var(--gold)}
 </section>
 
 <!-- FAQ -->
-<section id="faq" class="wrap faq">
+<section id="faq" class="wrap faq reveal">
   <span class="eyebrow" data-en="Good to know" data-es="Bueno saber">Good to know</span>
   <h2 data-en="Frequently asked questions" data-es="Preguntas frecuentes">Frequently asked questions</h2>
 
@@ -462,14 +592,14 @@ footer a:hover{color:var(--gold)}
 <!-- LOCATION -->
 <section id="location" class="wrap">
   <div class="loc">
-    <div>
+    <div class="reveal-left">
       <span class="eyebrow" data-en="Visit us" data-es="Visítanos">Visit us</span>
       <h2 data-en="Body sculpting &amp; post-op recovery in North Austin" data-es="Escultura corporal y recuperación post-operatoria en el norte de Austin">Body sculpting &amp; post-op recovery in North Austin</h2>
       <p>13343 U.S. 183, Austin, TX 78750<br><a href="tel:15125861010" style="color:var(--ink);font-weight:500">(512) 586-1010</a></p>
       <p style="margin-top:8px" data-en="Call or book online to confirm current hours." data-es="Llama o reserva en línea para confirmar el horario actual.">Call or book online to confirm current hours.</p>
       <p style="margin-top:20px"><a class="btn" href="https://beautyzoneaustin.glossgenius.com/" target="_blank" rel="noopener" data-en="Book Now" data-es="Reserva ahora">Book Now</a></p>
     </div>
-    <div class="map">
+    <div class="map reveal-right">
       <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map to Beauty Zone Austin" src="https://www.google.com/maps?q=13343+US-183,+Austin,+TX+78750&output=embed"></iframe>
     </div>
   </div>
@@ -477,7 +607,8 @@ footer a:hover{color:var(--gold)}
 
 <!-- FINAL CTA -->
 <section class="finalcta">
-  <div class="wrap">
+  <div class="blob blob-gold" style="width:420px;height:420px;top:-160px;left:50%;transform:translateX(-50%)"></div>
+  <div class="wrap reveal-scale">
     <span class="script">Beauty Zone Austin</span>
     <h2 style="margin-top:10px" data-en="Your plan starts with one conversation." data-es="Tu plan comienza con una conversación.">Your plan starts with one conversation.</h2>
     <p data-en="23+ years, medical director supervised, se habla español." data-es="Más de 23 años, supervisado por director médico, se habla español.">23+ years, medical director supervised, se habla español.</p>
@@ -605,6 +736,71 @@ footer a:hover{color:var(--gold)}
   });
   var saved = localStorage.getItem('bza-lang');
   if(saved === 'es') setLang('es');
+})();
+
+// scroll progress bar + header shrink
+(function(){
+  var bar = document.getElementById('scrollProgress');
+  var header = document.querySelector('header');
+  window.addEventListener('scroll', function(){
+    var h = document.documentElement;
+    var pct = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
+    bar.style.width = pct + '%';
+    header.classList.toggle('scrolled', h.scrollTop > 8);
+  }, { passive: true });
+})();
+
+// scroll-reveal
+(function(){
+  var els = document.querySelectorAll('.reveal, .reveal-scale, .reveal-left, .reveal-right');
+  if(!('IntersectionObserver' in window)){
+    els.forEach(function(el){ el.classList.add('in-view'); });
+    return;
+  }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        entry.target.classList.add('in-view');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+  els.forEach(function(el){ io.observe(el); });
+})();
+
+// count-up stats
+(function(){
+  var nodes = document.querySelectorAll('[data-count]');
+  if(!nodes.length) return;
+  function animateNode(el){
+    var target = parseFloat(el.getAttribute('data-count'));
+    var suffix = el.getAttribute('data-suffix') || '';
+    var isDecimal = String(target).indexOf('.') !== -1;
+    var start = null;
+    var duration = 1400;
+    function step(ts){
+      if(!start) start = ts;
+      var progress = Math.min((ts - start) / duration, 1);
+      var eased = 1 - Math.pow(1 - progress, 3);
+      var val = target * eased;
+      el.textContent = (isDecimal ? val.toFixed(1) : Math.round(val)) + suffix;
+      if(progress < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  if(!('IntersectionObserver' in window)){
+    nodes.forEach(animateNode);
+    return;
+  }
+  var io2 = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        animateNode(entry.target);
+        io2.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.6 });
+  nodes.forEach(function(el){ io2.observe(el); });
 })();
 </script>
 
