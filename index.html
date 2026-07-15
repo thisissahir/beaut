@@ -62,18 +62,18 @@ header{position:sticky;top:0;z-index:60;background:rgba(237,228,214,.94);backdro
 .lang-toggle span.active{background:var(--ink);color:#fff}
 @media(max-width:920px){.nav-links{display:none}.nav-phone{display:none}}
 
-/* Hero */
-.hero{padding:0}
-.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;min-height:min(82vh,700px)}
-.hero-copy{display:flex;flex-direction:column;justify-content:center;padding:64px 24px 64px max(24px,calc((100vw - var(--max))/2 + 24px))}
-.hero-copy .script-line{display:block;margin-bottom:6px}
-.hero-copy h1{margin:10px 0 20px}
-.hero-copy .proof{font-size:16px;color:var(--gold-deep);margin-bottom:30px;font-weight:500}
+/* Hero — full-bleed */
+.hero{padding:0;position:relative;min-height:min(92vh,780px);display:flex;align-items:center;background:#000}
+.hero-bg{position:absolute;inset:0;background-image:url('images/cinthia-hero.jpeg');background-size:cover;background-position:center 20%;z-index:0}
+.hero-scrim{position:absolute;inset:0;z-index:1;background:linear-gradient(100deg,rgba(28,23,18,.82) 0%,rgba(28,23,18,.55) 42%,rgba(28,23,18,.15) 68%,rgba(28,23,18,.05) 100%)}
+.hero-copy{position:relative;z-index:2;max-width:640px;padding:120px max(24px,calc((100vw - var(--max))/2 + 24px)) 110px}
+.hero-copy .eyebrow{color:var(--gold)}
+.hero-copy h1{color:#fff}
+.hero-copy .proof{font-size:16px;color:var(--gold);margin-bottom:22px;font-weight:500}
+.hero-copy>p:not(.proof){color:rgba(255,255,255,.82)}
 .hero-cta{display:flex;gap:14px;flex-wrap:wrap}
-.hero-media{background:linear-gradient(160deg,var(--oat) 0%,var(--gold) 130%);position:relative;display:flex;align-items:center;justify-content:center}
-.hero-media .frame{position:absolute;inset:32px;border:1px solid rgba(255,255,255,.55);border-radius:6px}
-.hero-media .caption{position:absolute;bottom:26px;left:26px;right:26px;color:#fff;font-size:13px;letter-spacing:.04em;background:rgba(28,23,18,.35);padding:10px 14px;border-radius:3px;backdrop-filter:blur(2px)}
-@media(max-width:920px){.hero-grid{grid-template-columns:1fr}.hero-media{min-height:280px;order:-1}}
+.hero-badge{position:absolute;bottom:110px;right:max(24px,calc((100vw - var(--max))/2 + 24px));left:auto;top:auto}
+@media(max-width:920px){.hero{min-height:640px}.hero-copy{padding:100px 24px 90px;max-width:100%}.hero-badge{display:none}}
 
 /* Trust strip */
 .trust{background:var(--ink);color:#fff;padding:28px 0}
@@ -230,12 +230,10 @@ section{position:relative;overflow:hidden}
 .hero-copy>p:not(.proof){animation-delay:.40s}
 .hero-cta{animation-delay:.52s}
 @keyframes heroUp{to{opacity:1;transform:translateY(0)}}
-.hero-media{animation:heroZoom 1.4s cubic-bezier(.22,.68,0,1.01) forwards;transform-origin:center}
-@keyframes heroZoom{from{opacity:0;transform:scale(1.08)}to{opacity:1;transform:scale(1)}}
-.hero-media .caption{transform:translateY(8px);opacity:0;animation:capIn .6s ease forwards;animation-delay:.9s}
-@keyframes capIn{to{transform:translateY(0);opacity:1}}
-.hero-badge{position:absolute;top:-18px;left:-18px;background:var(--surface);border:1px solid var(--line);border-radius:50%;width:92px;height:92px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;box-shadow:0 14px 30px rgba(28,23,18,.14);z-index:2;opacity:0;animation:badgeIn .6s cubic-bezier(.22,.68,0,1.01) forwards;animation-delay:1.05s}
-.hero-badge b{font-family:var(--serif);font-size:20px;color:var(--gold-deep);line-height:1}
+.hero-bg{animation:heroZoom 8s ease-out forwards;transform-origin:60% 30%}
+@keyframes heroZoom{from{transform:scale(1.1)}to{transform:scale(1)}}
+.hero-badge{position:absolute;z-index:3;background:var(--surface);border:1px solid var(--line);border-radius:50%;width:96px;height:96px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;box-shadow:0 14px 30px rgba(0,0,0,.28);opacity:0;animation:badgeIn .6s cubic-bezier(.22,.68,0,1.01) forwards;animation-delay:1.05s}
+.hero-badge b{font-family:var(--serif);font-size:21px;color:var(--gold-deep);line-height:1}
 .hero-badge span{font-size:9px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-top:2px}
 @keyframes badgeIn{from{opacity:0;transform:scale(.6) rotate(-8deg)}to{opacity:1;transform:scale(1) rotate(0)}}
 .scroll-cue{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:6px;color:rgba(255,255,255,.85);font-size:10px;letter-spacing:.14em;text-transform:uppercase;z-index:2}
@@ -335,24 +333,20 @@ section{position:relative;overflow:hidden}
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-grid">
-    <div class="hero-copy">
-      <span class="eyebrow" data-en="North Austin's advanced-aesthetics &amp; post-op medspa" data-es="El medspa de estética avanzada y post-operatorio del norte de Austin">North Austin's advanced-aesthetics &amp; post-op medspa</span>
-      <h1 data-en="Advanced body sculpting &amp; post-op recovery, 23 years in expert hands." data-es="Escultura corporal avanzada y recuperación post-operatoria, 23 años en manos expertas.">Advanced body sculpting &amp; post-op recovery, 23 years in expert hands.</h1>
-      <p class="proof" data-en="23+ years · Medical Director Supervised · Se habla español" data-es="Más de 23 años · Supervisado por Director Médico · Se habla español">23+ years · Medical Director Supervised · Se habla español</p>
-      <p data-en="Body sculpting, post-surgery recovery, laser, and facials with Cinthia Padilla — expert hands, safe care, financing available." data-es="Escultura corporal, recuperación post-cirugía, láser y faciales con Cinthia Padilla — manos expertas, cuidado seguro, financiamiento disponible.">Body sculpting, post-surgery recovery, laser, and facials with Cinthia Padilla — expert hands, safe care, financing available.</p>
-      <div class="hero-cta" style="margin-top:26px">
-        <a class="btn" href="https://beautyzoneaustin.glossgenius.com/" target="_blank" rel="noopener" data-en="Book Now" data-es="Reserva ahora">Book Now</a>
-        <a class="btn btn-ghost" href="#founder" data-en="Meet Cinthia" data-es="Conoce a Cinthia">Meet Cinthia</a>
-      </div>
-    </div>
-    <div class="hero-media" role="img" aria-label="Beauty Zone Austin treatment space" style="background-image:url('https://static.glossgenius.com/public/salon/60f05ee77a8deaceb3b9d5292084f4e9a884a8ac/website_cover_image/e02f4c77776019e886576e99372cb915.jpeg');background-size:cover;background-position:center">
-      <div class="hero-badge"><b>23+</b><span data-en="Years" data-es="Años">Years</span></div>
-      <div class="frame"></div>
-      <span class="caption" data-en="Beauty Zone Austin — 23+ years in advanced aesthetics" data-es="Beauty Zone Austin — más de 23 años en estética avanzada">Beauty Zone Austin — 23+ years in advanced aesthetics</span>
-      <div class="scroll-cue"><span>Scroll</span><span class="dot"></span></div>
+  <div class="hero-bg" role="img" aria-label="Cinthia Padilla, Founder of Beauty Zone Austin"></div>
+  <div class="hero-scrim"></div>
+  <div class="hero-copy">
+    <span class="eyebrow" data-en="North Austin's advanced-aesthetics &amp; post-op medspa" data-es="El medspa de estética avanzada y post-operatorio del norte de Austin">North Austin's advanced-aesthetics &amp; post-op medspa</span>
+    <h1 data-en="Advanced body sculpting &amp; post-op recovery, 23 years in expert hands." data-es="Escultura corporal avanzada y recuperación post-operatoria, 23 años en manos expertas.">Advanced body sculpting &amp; post-op recovery, 23 years in expert hands.</h1>
+    <p class="proof" data-en="23+ years · Medical Director Supervised · Se habla español" data-es="Más de 23 años · Supervisado por Director Médico · Se habla español">23+ years · Medical Director Supervised · Se habla español</p>
+    <p data-en="Body sculpting, post-surgery recovery, laser, and facials with Cinthia Padilla — expert hands, safe care, financing available." data-es="Escultura corporal, recuperación post-cirugía, láser y faciales con Cinthia Padilla — manos expertas, cuidado seguro, financiamiento disponible.">Body sculpting, post-surgery recovery, laser, and facials with Cinthia Padilla — expert hands, safe care, financing available.</p>
+    <div class="hero-cta" style="margin-top:26px">
+      <a class="btn" href="https://beautyzoneaustin.glossgenius.com/" target="_blank" rel="noopener" data-en="Book Now" data-es="Reserva ahora">Book Now</a>
+      <a class="btn btn-ghost" href="#founder" data-en="Meet Cinthia" data-es="Conoce a Cinthia">Meet Cinthia</a>
     </div>
   </div>
+  <div class="hero-badge"><b>23+</b><span data-en="Years" data-es="Años">Years</span></div>
+  <div class="scroll-cue"><span>Scroll</span><span class="dot"></span></div>
 </section>
 
 <!-- TRUST STRIP -->
