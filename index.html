@@ -63,17 +63,17 @@ header{position:sticky;top:0;z-index:60;background:rgba(237,228,214,.94);backdro
 @media(max-width:920px){.nav-links{display:none}.nav-phone{display:none}}
 
 /* Hero — full-bleed */
-.hero{padding:0;position:relative;height:min(64vh,560px);min-height:440px;display:flex;align-items:center;background:#000}
+.hero{padding:0;position:relative;height:min(64vh,560px);min-height:460px;display:flex;align-items:flex-end;background:#000}
 .hero-bg{position:absolute;inset:0;background-image:url('images/cinthia-hero.jpeg');background-size:cover;background-position:center 20%;z-index:0}
-.hero-scrim{position:absolute;inset:0;z-index:1;background:linear-gradient(100deg,rgba(28,23,18,.82) 0%,rgba(28,23,18,.55) 42%,rgba(28,23,18,.15) 68%,rgba(28,23,18,.05) 100%)}
-.hero-copy{position:relative;z-index:2;max-width:600px;padding:24px max(24px,calc((100vw - var(--max))/2 + 24px))}
+.hero-scrim{position:absolute;inset:0;z-index:1;background:linear-gradient(100deg,rgba(28,23,18,.88) 0%,rgba(28,23,18,.62) 42%,rgba(28,23,18,.2) 68%,rgba(28,23,18,.05) 100%),linear-gradient(0deg,rgba(28,23,18,.55) 0%,rgba(28,23,18,0) 45%)}
+.hero-copy{position:relative;z-index:2;max-width:600px;padding:24px max(24px,calc((100vw - var(--max))/2 + 24px)) 40px}
 .hero-copy .eyebrow{color:var(--gold)}
-.hero-copy h1{color:#fff;font-size:clamp(28px,4.4vw,44px)}
-.hero-copy .proof{font-size:15px;color:var(--gold);margin-bottom:16px;font-weight:500}
-.hero-copy>p:not(.proof){color:rgba(255,255,255,.82);font-size:15px}
-.hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:18px!important}
+.hero-copy h1{color:#fff;font-size:clamp(26px,4vw,44px);line-height:1.14}
+.hero-copy .proof{font-size:14.5px;color:var(--gold);margin-bottom:14px;font-weight:500}
+.hero-copy>p:not(.proof){color:rgba(255,255,255,.82);font-size:14.5px}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:16px!important}
 .hero-badge{position:absolute;bottom:24px;right:max(24px,calc((100vw - var(--max))/2 + 24px));left:auto;top:auto;width:78px;height:78px}
-@media(max-width:920px){.hero{height:auto;min-height:520px;padding:20px 0}.hero-copy{padding:20px 24px;max-width:100%}.hero-badge{display:none}}
+@media(max-width:920px){.hero{height:auto;min-height:0;padding:0}.hero-copy{padding:28px 24px 32px;max-width:100%}.hero-copy h1{font-size:clamp(24px,7vw,34px)}.hero-badge{display:none}}
 
 /* Trust strip */
 .trust{background:var(--ink);color:#fff;padding:28px 0}
