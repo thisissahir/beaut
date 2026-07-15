@@ -90,6 +90,32 @@ header{position:sticky;top:0;z-index:60;background:rgba(237,228,214,.94);backdro
 .pillar h3{margin-bottom:8px;font-size:18px}
 .pillar p{font-size:14px}
 
+/* Pillar icons — animated symbols */
+.picon{width:56px;height:56px;position:relative;display:flex;align-items:center;justify-content:center;margin-bottom:6px}
+@keyframes seal-spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+@keyframes seal-pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.25);opacity:.6}}
+@keyframes cross-pulse{0%,100%{transform:scale(1)}45%{transform:scale(1.18)}55%{transform:scale(.95)}}
+@keyframes beat-line{0%{stroke-dashoffset:120}100%{stroke-dashoffset:0}}
+@keyframes ripple-out{0%{transform:scale(.4);opacity:.9}100%{transform:scale(1.6);opacity:0}}
+@keyframes hand-tap{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-4px) rotate(-6deg)}}
+@keyframes coin-bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+.picon-seal-ring{position:absolute;inset:0;border:2px solid var(--gold);border-radius:50%;border-top-color:transparent;border-right-color:transparent;animation:seal-spin 6s linear infinite}
+.picon-seal-dash{width:34px;height:34px;border:1.5px dashed var(--muted);border-radius:50%}
+.picon-seal-dot{position:absolute;width:8px;height:8px;background:var(--gold);border-radius:50%;animation:seal-pulse 2.4s ease-in-out infinite}
+.picon-cross{position:absolute;width:30px;height:30px;animation:cross-pulse 2.6s ease-in-out infinite}
+.picon-cross i{position:absolute;background:var(--gold);border-radius:2px}
+.picon-cross i:first-child{top:0;left:50%;transform:translateX(-50%);width:8px;height:30px}
+.picon-cross i:last-child{left:0;top:50%;transform:translateY(-50%);width:30px;height:8px}
+.picon-beat circle{animation:beat-line 3.4s ease-in-out infinite alternate}
+.picon-ripple{position:absolute;width:40px;height:40px;border:1.5px solid var(--gold);border-radius:50%;animation:ripple-out 2.8s ease-out infinite}
+.picon-ripple.delay{border-color:var(--muted);animation-delay:1.4s}
+.picon-tap-dot{width:14px;height:14px;background:var(--gold);border-radius:50%;animation:hand-tap 1.8s ease-in-out infinite;transform-origin:center}
+.picon-coins{width:56px;height:40px;display:flex;align-items:flex-end;justify-content:center;gap:6px}
+.picon-coins span{width:14px;height:14px;border-radius:50%;animation:coin-bounce 1.6s ease-in-out infinite}
+.picon-coins span:nth-child(1){background:var(--muted);animation-delay:0s}
+.picon-coins span:nth-child(2){background:var(--gold);animation-delay:.2s}
+.picon-coins span:nth-child(3){background:var(--muted);animation-delay:.4s}
+
 /* Treatment cards */
 .tgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:40px}
 @media(max-width:980px){.tgrid{grid-template-columns:repeat(2,1fr)}}
@@ -365,10 +391,10 @@ section{position:relative;overflow:hidden}
   <span class="eyebrow" data-en="The difference" data-es="La diferencia">The difference</span>
   <h2 data-en="Why North Austin trusts Beauty Zone" data-es="Por qué el norte de Austin confía en Beauty Zone">Why North Austin trusts Beauty Zone</h2>
   <div class="grid4 stagger">
-    <div class="pillar reveal"><div class="num">01</div><h3 data-en="23+ years, one trusted name" data-es="Más de 23 años, un nombre de confianza">23+ years, one trusted name</h3><p data-en="Cinthia Padilla has been building this practice since she started delivering treatments from her apartment. That history is now yours to rely on." data-es="Cinthia Padilla ha construido esta práctica desde que empezó a ofrecer tratamientos desde su apartamento. Esa historia ahora está a tu disposición.">Cinthia Padilla has been building this practice since she started delivering treatments from her apartment. That history is now yours to rely on.</p></div>
-    <div class="pillar reveal"><div class="num">02</div><h3 data-en="Medically supervised" data-es="Supervisión médica">Medically supervised</h3><p data-en="Every treatment is performed under medical director supervision, with safety and a real assessment first." data-es="Cada tratamiento se realiza bajo la supervisión de un director médico, con seguridad y una evaluación real primero.">Every treatment is performed under medical director supervision, with safety and a real assessment first.</p></div>
-    <div class="pillar reveal"><div class="num">03</div><h3 data-en="Expert post-op hands" data-es="Manos expertas en post-operatorio">Expert post-op hands</h3><p data-en="A full recovery program for BBL, tummy tuck, and lipo patients who need lymphatic drainage done right." data-es="Un programa completo de recuperación para pacientes de BBL, abdominoplastia y lipo que necesitan un drenaje linfático hecho bien.">A full recovery program for BBL, tummy tuck, and lipo patients who need lymphatic drainage done right.</p></div>
-    <div class="pillar reveal"><div class="num">04</div><h3 data-en="Financing that fits" data-es="Financiamiento a tu medida">Financing that fits</h3><p data-en="Body sculpting and post-op packages, paid over time through Cherry, so a plan is never out of reach." data-es="Paquetes de escultura corporal y post-operatorio, pagados con el tiempo a través de Cherry, para que un plan nunca esté fuera de alcance.">Body sculpting and post-op packages, paid over time through Cherry, so a plan is never out of reach.</p></div>
+    <div class="pillar reveal"><div class="picon"><div class="picon-seal-ring"></div><div class="picon-seal-dash"></div><div class="picon-seal-dot"></div></div><div class="num">01</div><h3 data-en="23+ years, one trusted name" data-es="Más de 23 años, un nombre de confianza">23+ years, one trusted name</h3><p data-en="Cinthia Padilla has been building this practice since she started delivering treatments from her apartment. That history is now yours to rely on." data-es="Cinthia Padilla ha construido esta práctica desde que empezó a ofrecer tratamientos desde su apartamento. Esa historia ahora está a tu disposición.">Cinthia Padilla has been building this practice since she started delivering treatments from her apartment. That history is now yours to rely on.</p></div>
+    <div class="pillar reveal"><div class="picon"><div class="picon-cross"><i></i><i></i></div><svg width="56" height="56" class="picon-beat" style="position:absolute;inset:0"><circle cx="28" cy="28" r="24" fill="none" stroke="var(--muted)" stroke-width="1.5" stroke-dasharray="151" stroke-dashoffset="0"/></svg></div><div class="num">02</div><h3 data-en="Medically supervised" data-es="Supervisión médica">Medically supervised</h3><p data-en="Every treatment is performed under medical director supervision, with safety and a real assessment first." data-es="Cada tratamiento se realiza bajo la supervisión de un director médico, con seguridad y una evaluación real primero.">Every treatment is performed under medical director supervision, with safety and a real assessment first.</p></div>
+    <div class="pillar reveal"><div class="picon"><div class="picon-ripple"></div><div class="picon-ripple delay"></div><div class="picon-tap-dot"></div></div><div class="num">03</div><h3 data-en="Expert post-op hands" data-es="Manos expertas en post-operatorio">Expert post-op hands</h3><p data-en="A full recovery program for BBL, tummy tuck, and lipo patients who need lymphatic drainage done right." data-es="Un programa completo de recuperación para pacientes de BBL, abdominoplastia y lipo que necesitan un drenaje linfático hecho bien.">A full recovery program for BBL, tummy tuck, and lipo patients who need lymphatic drainage done right.</p></div>
+    <div class="pillar reveal"><div class="picon-coins" style="margin-bottom:16px"><span></span><span></span><span></span></div><div class="num">04</div><h3 data-en="Financing that fits" data-es="Financiamiento a tu medida">Financing that fits</h3><p data-en="Body sculpting and post-op packages, paid over time through Cherry, so a plan is never out of reach." data-es="Paquetes de escultura corporal y post-operatorio, pagados con el tiempo a través de Cherry, para que un plan nunca esté fuera de alcance.">Body sculpting and post-op packages, paid over time through Cherry, so a plan is never out of reach.</p></div>
   </div>
 </section>
 
